@@ -1,19 +1,20 @@
 
 ## 🎯 Índice
-1. Métodos de Instalación
-2. Instalación en Kali Linux
-3. Instalación en Ubuntu/Debian
-4. Instalación en macOS
-5. Instalación en Windows
-6. Instalación con Docker
-7. Instalación desde Cargo
-8. Compilación desde Fuentes
-9. Configuración Avanzada
-10. Troubleshooting
+1. [Métodos de Instalación](#métodos-de-instalación)
+2. [Instalación en Kali Linux](#instalación-en-kali-linux)
+3. [Instalación en Ubuntu/Debian](#instalación-en-ubuntudebian)
+4. [Instalación en macOS](#instalación-en-macos)
+5. [Instalación en Windows](#instalación-en-windows)
+6. [Instalación con Docker](#instalación-con-docker)
+7. [Instalación desde Cargo](#instalación-desde-cargo)
+8. [Compilación desde Fuentes](#compilación-desde-fuentes)
+9. [Configuración Avanzada](#configuración-avanzada)
+10. [Troubleshooting](#troubleshooting)
 
 ---
 
-## ## 🎁 Métodos de Instalación
+<a id="métodos-de-instalación"></a>
+## 🎁 Métodos de Instalación
 
 ### Resumen de Opciones Disponibles
 
@@ -27,7 +28,8 @@
 
 ---
 
-## Instalación en Kali Linux
+<a id="instalación-en-kali-linux"></a>
+## 🐍 Instalación en Kali Linux
 
 ```
 # Actualizar repositorios
@@ -66,6 +68,7 @@ rustscan -a 127.0.0.1 --scan-order sequential
 ```
 ---
 
+<a id="instalación-en-ubuntudebian"></a>
 ## 🐧 Instalación en Ubuntu/Debian
 
 ### Para Ubuntu 20.04+ / Debian 11+
@@ -99,7 +102,8 @@ sudo apt install libc6-dev
 
 ---
 
-##  Instalación en macOS
+<a id="instalación-en-macos"></a>
+## 🍎 Instalación en macOS
 
 ### Método 1: Homebrew (Recomendado)
 
@@ -142,6 +146,7 @@ ulimit -n
 
 ---
 
+<a id="instalación-en-windows"></a>
 ## 🪟 Instalación en Windows
 
 ### Método 1: Chocolatey
@@ -183,6 +188,7 @@ rustscan -a 127.0.0.1
 
 ---
 
+<a id="instalación-con-docker"></a>
 ## 🐳 Instalación con Docker
 
 ### Método Básico
@@ -224,6 +230,7 @@ docker-compose up
 docker-compose up -d
 ```
 
+<a id="instalación-desde-cargo"></a>
 ## 📦 Instalación desde Cargo
 
 ### Prerrequisitos
@@ -262,6 +269,7 @@ rustup update
 
 ---
 
+<a id="compilación-desde-fuentes"></a>
 ## 🔨 Compilación desde Fuentes
 
 ### Clonar y Compilar
@@ -313,6 +321,7 @@ RUSTFLAGS="-C target-cpu=native" cargo build --release
 
 ---
 
+<a id="configuración-avanzada"></a>
 ## ⚙️ Configuración Avanzada
 
 ### Archivo de Configuración Global
@@ -398,6 +407,7 @@ adaptive_learning = true
 
 ---
 
+<a id="troubleshooting"></a>
 ## 🔧 Troubleshooting
 
 ### Problemas Comunes y Soluciones
