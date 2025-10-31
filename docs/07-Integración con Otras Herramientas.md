@@ -15,6 +15,8 @@
 ### El Ecosistema RustScan
 RustScan está diseñado para ser el **acelerador** en pipelines de seguridad, no para reemplazar herramientas existentes. Su integración nativa con otras herramientas lo convierte en el componente perfecto para workflows automatizados.
 
+![Integraciones de Rustscan](https://github.com/itsanndev/RustScan-Arsenal-Analista/blob/main/resources/images/integraciones.png)
+
 ### Patrones Comunes de Integración
 
 ```
