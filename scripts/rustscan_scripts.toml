@@ -1,0 +1,221 @@
+# RustScan Scripting Engine Configuration
+# Configuración global para scripts personalizados de RustScan
+# Ubicación: ~/.rustscan_scripts.toml o ./rustscan_scripts.toml
+
+[scripts]
+# Tags globales para filtrar scripts (solo se ejecutan scripts con estos tags)
+tags = ["security", "scanning", "production", "approved"]
+
+# Puertos que activan la ejecución de scripts
+ports = ["80", "443", "8080", "8443", "22", "21", "25", "53", "135", "139", "445", "3389", "3306", "5432", "27017"]
+
+# Formato de llamada predeterminado para scripts
+call_format = "python3 {{script}} {{ip}} {{port}}"
+
+# Timeout para scripts en segundos
+script_timeout = 30
+
+# Habilitar/deshabilitar RSE globalmente
+enabled = true
+
+# Configuración de logging
+[logging]
+# Nivel de log: debug, info, warn, error
+level = "info"
+# Archivo de log (opcional)
+file = "/var/log/rustscan_scripts.log"
+# Habilitar logging en consola
+console = true
+
+# Configuración de seguridad
+[security]
+# Directorios permitidos para ejecutar scripts
+allowed_directories = [
+    "~/.rustscan/scripts",
+    "./scripts",
+    "/opt/rustscan/scripts"
+]
+
+# Verificar checksums de scripts (opcional)
+verify_checksums = false
+
+# Usuarios permitidos para ejecutar scripts
+allowed_users = ["root", "security", "rustscan"]
+
+# Configuración de rendimiento
+[performance]
+# Número máximo de scripts concurrentes
+max_concurrent_scripts = 5
+# Tiempo máximo de ejecución por script (segundos)
+max_script_time = 60
+# Memoria máxima por script (MB)
+max_memory_mb = 256
+
+# Scripts personalizados definidos
+[[custom_scripts]]
+name = "http-scanner"
+path = "./scripts/python/http-scanner.py"
+description = "Escáner HTTP avanzado con análisis de seguridad"
+tags = ["http", "web", "security", "scanning"]
+trigger_ports = ["80", "443", "8080", "8443"]
+enabled = true
+priority = 1
+timeout = 45
+
+[[custom_scripts]]
+name = "ssh-audit"
+path = "./scripts/python/ssh-audit.py"
+description = "Auditoría de seguridad para servicios SSH"
+tags = ["ssh", "security", "audit"]
+trigger_ports = ["22"]
+enabled = true
+priority = 2
+timeout = 30
+
+[[custom_scripts]]
+name = "complete-automation"
+path = "./scripts/python/complete-automation.py"
+description = "Sistema completo de automatización de seguridad"
+tags = ["automation", "security", "complete"]
+trigger_ports = ["1-65535"]
+enabled = true
+priority = 3
+timeout = 60
+
+[[custom_scripts]]
+name = "web-fingerprint"
+path = "./scripts/bash/web-fingerprint.sh"
+description = "Fingerprinting básico de servicios web"
+tags = ["http", "web", "fingerprint"]
+trigger_ports = ["80", "443", "8080", "8443"]
+enabled = true
+priority = 4
+call_format = "bash {{script}} {{ip}} {{port}}"
+timeout = 20
+
+[[custom_scripts]]
+name = "service-detector"
+path = "./scripts/bash/service-detector.sh"
+description = "Detección y clasificación de servicios"
+tags = ["discovery", "services", "scanning"]
+trigger_ports = ["1-1000"]
+enabled = true
+priority = 5
+call_format = "bash {{script}} {{ip}} {{port}}"
+timeout = 25
+
+# Grupos de scripts para ejecución organizada
+[script_groups]
+# Grupo para escaneos web completos
+web_scanning = ["http-scanner", "web-fingerprint"]
+
+# Grupo para auditorías de seguridad
+security_audit = ["ssh-audit", "complete-automation"]
+
+# Grupo para descubrimiento básico
+discovery = ["service-detector"]
+
+# Grupo completo (todos los scripts)
+full_scan = ["http-scanner", "ssh-audit", "complete-automation", "web-fingerprint", "service-detector"]
+
+# Configuración por entorno
+[environments]
+# Configuración para entorno de desarrollo
+[environments.development]
+tags = ["scanning", "development"]
+script_timeout = 60
+enabled = true
+
+# Configuración para entorno de producción
+[environments.production]
+tags = ["security", "production", "approved"]
+script_timeout = 30
+enabled = true
+verify_checksums = true
+
+# Configuración para pentesting
+[environments.pentesting]
+tags = ["security", "scanning", "pentest"]
+script_timeout = 45
+enabled = true
+max_concurrent_scripts = 10
+
+# Integraciones con herramientas externas
+[integrations]
+# Configuración para integración con Nmap
+[integrations.nmap]
+enabled = false
+default_scripts = "default,safe"
+output_format = "xml"
+
+# Configuración para integración con Nuclei
+[integrations.nuclei]
+enabled = false
+templates_path = "~/.local/nuclei-templates"
+timeout = 30
+
+# Configuración para reporting
+[integrations.reporting]
+enabled = false
+formats = ["json", "text"]
+output_directory = "./reports"
+timestamp_format = "%Y-%m-%d_%H-%M-%S"
+
+# Variables de entorno para scripts
+[environment_variables]
+# Variables disponibles para todos los scripts
+RUSTSCAN_VERSION = "2.1.1"
+SCANNER_NAME = "rustscan-arsenal"
+CONTACT_EMAIL = "security@example.com"
+
+# Variables específicas por script
+[environment_variables.scripts]
+# Variables para http-scanner
+[environment_variables.scripts.http-scanner]
+USER_AGENT = "RustScan-Security-Scanner/1.0"
+TIMEOUT = "10"
+VERIFY_SSL = "false"
+
+# Variables para ssh-audit
+[environment_variables.scripts.ssh-audit]
+SSH_TIMEOUT = "5"
+AUDIT_LEVEL = "comprehensive"
+
+# Configuración de notificaciones (futura feature)
+[notifications]
+# Habilitar notificaciones
+enabled = false
+# Métodos de notificación: email, webhook, slack
+methods = ["email"]
+
+[notifications.email]
+smtp_server = "smtp.example.com"
+smtp_port = 587
+from_address = "rustscan@example.com"
+to_address = "security-team@example.com"
+
+[notifications.webhook]
+url = "https://hooks.example.com/security"
+timeout = 10
+
+# Configuración de actualizaciones
+[updates]
+# Verificar actualizaciones de scripts automáticamente
+check_updates = true
+# Frecuencia de verificación en horas
+check_interval_hours = 24
+repository_url = "https://github.com/itsanndev/RustScan-Arsenal-Analista/tree/main/scripts"
+
+# Ejemplos de uso comentados
+[examples]
+# Ejemplo 1: Ejecutar solo scripts de seguridad
+example1 = "rustscan -a 192.168.1.1 --scripts security_audit"
+
+# Ejemplo 2: Ejecutar todos los scripts excepto experimentales
+example2 = "rustscan -a 192.168.1.1 --scripts all --exclude-tags experimental"
+
+# Ejemplo 3: Ejecutar con configuración de producción
+example3 = "rustscan -a 192.168.1.1 --environment production"
+
+# Ejemplo 4: Script específico con variables personalizadas
+example4 = "rustscan -a 192.168.1.1 --script http-scanner --script-timeout 60"
