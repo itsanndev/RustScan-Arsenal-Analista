@@ -1,13 +1,14 @@
 
 ## 🎯 Índice
-1. RustScan - ¿Que es?
-2. Filosofía de Diseño
-3. Casos de Uso Ideales
-4. Arquitectura Técnica
-5. Comparativa con el Ecosistema Existente
+1. [RustScan - ¿Que es?](#rustscan---que-es)
+2. [Filosofía de Diseño](#filosofía-de-diseño)
+3. [Casos de Uso Ideales](#casos-de-uso-ideales)
+4. [Arquitectura Técnica](#arquitectura-técnica)
+5. [Comparativa con el Ecosistema Existente](#comparativa-con-el-ecosistema-existente)
 
 ---
 
+<a id="rustscan---que-es"></a>
 ## RustScan - ¿Que es?
 
 **RustScan** es un escáner de puertos de última generación escrito en Rust que redefine los estándares de velocidad y eficiencia en el descubrimiento de redes. No es simplemente "otro escáner de puertos", sino una herramienta diseñada específicamente para el analista moderno que opera en entornos dinámicos y demandantes.
@@ -65,6 +66,7 @@ rustscan -a $TARGET -- -sS --script "http-*" -oA owasp_phase1
 
 ---
 
+<a id="filosofía-de-diseño"></a>
 ## 🎨 Filosofía de Diseño
 
 ### Principios Fundamentales
@@ -105,8 +107,8 @@ rustscan -a $TARGET -- -sS --script "http-*" -oA owasp_phase1
 
 ---
 
+<a id="casos-de-uso-ideales"></a>
 ## 💼 Casos de Uso Ideales
-Ejemplos de circunstancias cruciales en las que RustScan destaca.
 
 #### 1. **Pentesting de Redes Internas**
 
@@ -163,7 +165,9 @@ nmap -sS -T2 -D RND:10 --source-port 53 $TARGET
 
 ---
 
+<a id="arquitectura-técnica"></a>
 ## 🏗️ Arquitectura Técnica
+
 
 ### Componentes Principales
 ![[arquitectura.png]]
@@ -263,6 +267,7 @@ _(Modo de exportación: greppable text para tuberías, JSON estructurado para SI
 _Este flujo muestra cómo la configuración (TOML) controla el RSE, el Scanner Core produce eventos asíncronos que el Adaptive Engine usa para decidir acciones, y finalmente todo se normaliza al Output Format._
 
 ---
+<a id="comparativa-con-el-ecosistema-existente"></a>
 ## 🎯 Conclusión Estratégica
 
 ### ¿Cuándo Elegir RustScan?
