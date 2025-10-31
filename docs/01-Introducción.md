@@ -170,7 +170,7 @@ nmap -sS -T2 -D RND:10 --source-port 53 $TARGET
 
 
 ### Componentes Principales
-![[arquitectura.png]]
+![Diagrama de Arquitectura de RustScan](resources/arquitectura.png)
 
 #### 1. **SCANNER CORE (Async I/O)**
 ```
