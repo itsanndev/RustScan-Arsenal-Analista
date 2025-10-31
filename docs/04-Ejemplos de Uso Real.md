@@ -7,7 +7,6 @@
 5. [CTFs y Entornos Educativos](#ctfs-y-entornos-educativos)
 6. [Red Teams](#red-teams)
 7. [DevSecOps](#devsecops)
-8. [Scripts de Producción](#scripts-de-producción)
 
 ---
 
