@@ -59,8 +59,8 @@ RustScan-Arsenal-Analista/
 │   │   └── elk-export.py                     # Exportación a ELK Stack
 │   └── 📄 targets.txt                        # Ejemplos de targets para testing
 │
-└── 🎨 resources/ (Material Adicional)
-    └─── 🖼️ workflow-diagrams/                 # Diagramas de flujo
+└── 🎨 resources/ (material multimedia)
+    └─── 🖼️ images/             # Diagramas de flujo utilizados en documentacion
 ```
 
 ## 🚀 Características Principales
