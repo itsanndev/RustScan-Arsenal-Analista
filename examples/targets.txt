@@ -1,0 +1,47 @@
+# Targets para testing - Archivo de ejemplos
+# Estos targets son para pruebas legales y educacionales
+
+# Targets locales de prueba
+127.0.0.1
+localhost
+192.168.1.1/24
+
+# Servicios web de prueba
+scanme.nmap.org
+httpbin.org
+
+# Rangos de IP para testing de red local
+10.0.0.1/24
+172.16.0.1/16
+192.168.0.1/24
+
+# Puertos comunes para escaneo
+# HTTP/HTTPS
+80,443,8080,8443
+
+# Servicios de base de datos
+3306,5432,27017,6379
+
+# Servicios de sistema
+21,22,23,25,53,110,143,993,995
+
+# Servicios Windows
+135,139,445,3389
+
+# Servicios de aplicacion
+3000,4200,5000,8000,9000
+
+# Rangos de puertos para diferentes tipos de escaneo
+# Escaneo rapido
+1-1000
+
+# Escaneo completo
+1-10000
+
+# Escaneo exhaustivo
+1-65535
+
+# Targets especificos para integracion
+target1.example.com:80,443,22
+target2.example.com:1-1000
+test-server.local:22,80,443,3306
