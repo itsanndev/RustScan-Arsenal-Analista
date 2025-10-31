@@ -35,7 +35,7 @@ RustScan-Arsenal-Analista/
 │   ├── 📄 04-Ejemplos-Uso-Reales.md          # Casos prácticos documentados
 │   ├── 📄 05-Scripting-Engine.md             # Guía avanzada de RSE
 │   ├── 📄 06-Limitaciones-Alternativas.md    # Análisis crítico comparativo
-│   └── X 07-Integracion-Herramientas.md     # Guía de integración con ecosistema
+│   └── 📄 07-Integracion-Herramientas.md     # Guía de integración con ecosistema
 │
 ├── 🛠️ scripts/ (Recursos Ejecutables - 🚧 UNDER CONSTRUCTION)
 │   ├── 🔧 python/
