@@ -1,17 +1,18 @@
 
 ## 🎯 Índice
-1. Comandos Esenciales
-2. Escaneos Avanzados
-3. Técnicas de Evasión y Sigilo
-4. Integración con Nmap
-5. Scripting y Automatización
-6. Configuración Persistente
-7. Combinación con Otras Herramientas
-8. Troubleshooting Rápido
+1. [Comandos Esenciales](#comandos-esenciales)
+2. [Escaneos Avanzados](#escaneos-avanzados)
+3. [Técnicas de Evasión y Sigilo](#técnicas-de-evasión-y-sigilo)
+4. [Integración con Nmap](#integración-con-nmap)
+5. [Scripting y Automatización](#scripting-y-automatización)
+6. [Configuración Persistente](#configuración-persistente)
+7. [Combinación con Otras Herramientas](#combinación-con-otras-herramientas)
+8. [Troubleshooting Rápido](#troubleshooting-rápido)
     
 
 ---
 
+<a id="comandos-esenciales"></a>
 ## 🚀 Comandos Esenciales
 
 ### Escaneos Básicos
@@ -64,6 +65,7 @@ rustscan -a 192.168.1.0/24 --exclude 192.168.1.100,192.168.1.200
 
 ---
 
+<a id="escaneos-avanzados"></a>
 ## ⚡ Escaneos Avanzados
 
 ### Optimización de Rendimiento
@@ -111,6 +113,7 @@ rustscan -a 192.168.1.1 -p 1-100,1000-2000,8080-9090
 
 ---
 
+<a id="técnicas-de-evasión-y-sigilo"></a>
 ## 🕵️ Técnicas de Evasión y Sigilo
 
 ### Timing y Velocidad Controlada
@@ -152,6 +155,7 @@ rustscan -a 192.168.1.1 --scan-order Random --timeout 3000 -b 500
 
 ---
 
+<a id="integración-con-nmap"></a>
 ## 🔗 Integración con Nmap
 
 ### Pipes Automáticos Básicos
@@ -200,6 +204,7 @@ rustscan -a 192.168.1.1 -- -sV --version-intensity 9
 ```
 ---
 
+<a id="scripting-y-automatización"></a>
 ## 🤖 Scripting y Automatización
 
 ### RustScan Scripting Engine (RSE)
@@ -332,6 +337,7 @@ if __name__ == "__main__":
 ```
 ---
 
+<a id="configuración-persistente"></a>
 ## ⚙️ Configuración Persistente
 
 ### Archivo de Configuración Global
@@ -416,6 +422,7 @@ trigger_ports = ["22"]
 
 ---
 
+<a id="combinación-con-otras-herramientas"></a>
 ## 🔗 Combinación con Otras Herramientas
 
 ### RustScan + Nuclei
@@ -481,7 +488,8 @@ echo "Análisis completado: $OUTPUT_DIR"
 
 ---
 
-## 🚨 Troubleshooting
+<a id="troubleshooting-rápido"></a>
+## 🚨 Troubleshooting Rápido
 ### Problemas Comunes y Soluciones Inmediatas
 ```
 # Error: "Too many open files"
@@ -535,6 +543,7 @@ rustscan -a 192.168.1.1 --timeout 200 -b 25000
 
 ---
 
+<a id="tips-profesionales"></a>
 ## 💡 Tips Profesionales
 
 ### Para Pentesting
