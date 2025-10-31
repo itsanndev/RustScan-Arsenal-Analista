@@ -1,19 +1,20 @@
 
 ## 🎯 Índice
-1. Introducción a RSE
-2. Configuración del Sistema
-3. Scripts en Python
-4. Scripts en Bash/Shell
-5. Scripts en Perl
-6. Scripts Binarios Personalizados
-7. Gestión de Tags y Filtros
-8. Ejemplos Avanzados
-9. Best Practices
-10. Troubleshooting
+1. [Introducción a RSE](#-introducción-a-rse)
+2. [Configuración del Sistema](#-configuración-del-sistema)
+3. [Scripts en Python](#-scripts-en-python)
+4. [Scripts en Bash/Shell](#-scripts-en-bashshell)
+5. [Scripts en Perl](#-scripts-en-perl)
+6. [Scripts Binarios Personalizados](#-scripts-binarios-personalizados)
+7. [Gestión de Tags y Filtros](#-gestión-de-tags-y-filtros)
+8. [Ejemplos Avanzados](#-ejemplos-avanzados)
+9. [Best Practices](#-best-practices)
+10. [Troubleshooting](#-troubleshooting)
     
 
 ---
 
+<a id="-introducción-a-rse"></a>
 ## 🤖 Introducción a RSE
 
 ### ¿Qué es el RustScan Scripting Engine?
@@ -44,6 +45,7 @@ rustscan -a 192.168.1.1
 ```
 ---
 
+<a id="-configuración-del-sistema"></a>
 ## ⚙️ Configuración del Sistema
 
 ### Archivo de Configuración Principal
@@ -111,6 +113,7 @@ export RUSTSCAN_SCRIPTS_CALL_FORMAT="python3 {{script}} {{ip}} {{port}}"
 
 ---
 
+<a id="-scripts-en-python"></a>
 ## 🐍 Scripts en Python
 
 ### Estructura Básica de Script Python
@@ -462,7 +465,7 @@ def main():
     auditor.audit_ssh_service()
     
     # Mostrar resultados
-    print(f"\n🔐 SSH AUDIT REPORT - {ip}:{port}")
+    print(f"\nSSH AUDIT REPORT - {ip}:{port}")
     for finding in auditor.results['findings']:
         print(f"• {finding['type']}: {finding.get('message', '')}")
 
@@ -471,6 +474,7 @@ if __name__ == "__main__":
 ```
 
 ---
+<a id="-scripts-en-bashshell"></a>
 ## 🐚 Scripts en Bash/Shell
 
 ### Script Básico de Detección de Servicios
@@ -641,6 +645,7 @@ log "ANALISIS COMPLETADO: $OUTPUT_DIR"
 ```
 ---
 
+<a id="-scripts-en-perl"></a>
 ## 🐪 Scripts en Perl
 
 ### Script de Análisis de Servicios en Perl
@@ -788,6 +793,7 @@ sub test_connectivity {
 
 ---
 
+<a id="-scripts-binarios-personalizados"></a>
 ## 🔧 Scripts Binarios Personalizados
 
 ### Ejemplo: Integración con Herramientas Externas
@@ -818,7 +824,7 @@ TARGET_URL="$PROTOCOL://$IP:$PORT"
 OUTPUT_DIR="/tmp/rustscan_external_$(date +%s)"
 mkdir -p "$OUTPUT_DIR"
 
-echo "🔗 Integrando herramientas externas para: $TARGET_URL"
+echo "Integrando herramientas externas para: $TARGET_URL"
 
 # 1. WhatWeb para fingerprinting
 if command -v whatweb &> /dev/null; then
@@ -872,11 +878,12 @@ echo "GENERANDO REPORTE DE INTEGRACIÓN"
     fi
 } > "$OUTPUT_DIR/external_tools_report.txt"
 
-echo "✅ Integración completada. Reporte en: $OUTPUT_DIR/external_tools_report.txt"
+echo "Integración completada. Reporte en: $OUTPUT_DIR/external_tools_report.txt"
 ```
 
 ---
 
+<a id="-gestión-de-tags-y-filtros"></a>
 ## 🏷️ Gestión de Tags y Filtros
 
 ### Sistema de Tags Avanzado
@@ -928,6 +935,7 @@ rustscan -a 192.168.1.1 --scripts "security,production" --require-tags "approved
 
 ---
 
+<a id="-ejemplos-avanzados"></a>
 ## 🚀 Ejemplos Avanzados
 
 ### Script de Automatización Completa
@@ -1105,7 +1113,7 @@ def main():
     automation.run_all_checks()
     
     # Mostrar resultados
-    print(f"\n🤖 COMPLETE AUTOMATION REPORT - {ip}:{port}")
+    print(f"\nCOMPLETE AUTOMATION REPORT - {ip}:{port}")
     for module, results in automation.results['modules'].items():
         print(f"\n{module.upper()} CHECKS:")
         for check, result in results.items():
@@ -1124,6 +1132,7 @@ if __name__ == "__main__":
 ```
 ---
 
+<a id="-best-practices"></a>
 ## ✅ Best Practices
 
 ### Estructura de Directorios Recomendada
@@ -1213,6 +1222,7 @@ def log_execution(script_name, ip, port, result):
 
 ---
 
+<a id="-troubleshooting"></a>
 ## 🐛 Troubleshooting
 
 ### Problemas Comunes y Soluciones

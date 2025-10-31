@@ -1,18 +1,17 @@
 
 ## 🎯 Índice
 
-1. Limitaciones Técnicas de RustScan
-2. Escenarios Donde Otras Herramientas Son Mejores
-3. Comparativa Detallada con Nmap
-4. Comparativa con Masscan y Zmap
-5. Estrategias de Combinación
-6. Casos de Uso Específicos por Herramienta
-7. Migración desde Otras Herramientas
-8. Futuro y Roadmap
+1. [Limitaciones Técnicas de RustScan](#-limitaciones-técnicas-de-rustscan)
+2. [Escenarios Donde Otras Herramientas Son Mejores](#escenarios-donde-otras-herramientas-son-mejores)
+3. [Comparativa Detallada con Nmap](#-comparativa-detallada-con-nmap)
+4. [Comparativa con Masscan y Zmap](#-comparativa-con-masscan-y-zmap)
+5. [Estrategias de Combinación](#-estrategias-de-combinación)
+6. [Casos de Uso Específicos por Herramienta](#-casos-de-uso-específicos-por-herramienta)
+7. [Migración desde Otras Herramientas](#-migración-desde-otras-herramientas)
     
-
 ---
 
+<a id="-limitaciones-técnicas-de-rustscan"></a>
 ## ⚠️ Limitaciones Técnicas de RustScan
 
 ### Limitaciones Actuales (v2.1.1)
@@ -66,7 +65,9 @@ rustscan -a 192.168.1.100 -b 1000 --timeout 2000  # Reducir batch size
 
 ---
 
+<a id="escenarios-donde-otras-herramientas-son-mejores"></a>
 ## Escenarios Donde Otras Herramientas Son Mejores
+
 
 ### Cuándo Usar *Nmap* en su lugar
 
@@ -133,6 +134,7 @@ automae --target 192.168.1.0/24 --module portscan
 
 ---
 
+<a id="-comparativa-detallada-con-nmap"></a>
 ## 📊 Comparativa Detallada con Nmap
 
 ### Tabla Comparativa Completa: RustScan vs Nmap
@@ -217,6 +219,7 @@ for category, features in comparison.feature_matrix.items():
 
 ---
 
+<a id="-comparativa-con-masscan-y-zmap"></a>
 ## 🚀 Comparativa con Masscan y Zmap
 
 ### Tabla Comparativa: Escáneres de Alta Velocidad
@@ -263,6 +266,7 @@ echo "   nmap -sC -sV -A -iL masscan_results.txt"
 
 ---
 
+<a id="-estrategias-de-combinación"></a>
 ## 🔄 Estrategias de Combinación
 
 ### Pipeline Profesional: Las 3 Herramientas
@@ -453,6 +457,7 @@ if __name__ == "__main__":
 ```
 ---
 
+<a id="-casos-de-uso-específicos-por-herramienta"></a>
 ## 🎯 Casos de Uso Específicos por Herramienta
 
 ### Matriz de Decisión: ¿Qué Herramienta Usar?
@@ -502,6 +507,7 @@ check_scenario "Investigación académica" "estudio-investigacion" "escala" "pre
 
 ---
 
+<a id="-migración-desde-otras-herramientas"></a>
 ## 🔄 Migración desde Otras Herramientas
 
 ### De Nmap a RustScan: Comandos Equivalentes

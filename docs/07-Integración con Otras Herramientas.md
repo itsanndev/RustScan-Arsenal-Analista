@@ -6,8 +6,6 @@
 5. [Integración con Escáneres de Vulnerabilidades](#integración-con-escáneres-de-vulnerabilidades)
 6. [Integración con Frameworks de Pentesting](#integración-con-frameworks-de-pentesting)
 7. [Integración con SIEM y Monitoring](#integración-con-siem-y-monitoring)
-8. [Integración en CI/CD](#integración-en-cicd)
-9. [Scripts de Integración Avanzados](#scripts-de-integración-avanzados)
 
 
 ---

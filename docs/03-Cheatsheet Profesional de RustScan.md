@@ -1,17 +1,18 @@
 
 ## 🎯 Índice
-1. Comandos Esenciales
-2. Escaneos Avanzados
-3. Técnicas de Evasión y Sigilo
-4. Integración con Nmap
-5. Scripting y Automatización
-6. Configuración Persistente
-7. Combinación con Otras Herramientas
-8. Troubleshooting Rápido
+1. [Comandos Esenciales](#comandos-esenciales)
+2. [Escaneos Avanzados](#escaneos-avanzados)
+3. [Técnicas de Evasión y Sigilo](#técnicas-de-evasión-y-sigilo)
+4. [Integración con Nmap](#integración-con-nmap)
+5. [Scripting y Automatización](#scripting-y-automatización)
+6. [Configuración Persistente](#configuración-persistente)
+7. [Combinación con Otras Herramientas](#combinación-con-otras-herramientas)
+8. [Troubleshooting Rápido](#troubleshooting-rápido)
     
 
 ---
 
+<a id="comandos-esenciales"></a>
 ## 🚀 Comandos Esenciales
 
 ### Escaneos Básicos
@@ -64,6 +65,7 @@ rustscan -a 192.168.1.0/24 --exclude 192.168.1.100,192.168.1.200
 
 ---
 
+<a id="escaneos-avanzados"></a>
 ## ⚡ Escaneos Avanzados
 
 ### Optimización de Rendimiento
@@ -111,6 +113,7 @@ rustscan -a 192.168.1.1 -p 1-100,1000-2000,8080-9090
 
 ---
 
+<a id="técnicas-de-evasión-y-sigilo"></a>
 ## 🕵️ Técnicas de Evasión y Sigilo
 
 ### Timing y Velocidad Controlada
@@ -152,6 +155,7 @@ rustscan -a 192.168.1.1 --scan-order Random --timeout 3000 -b 500
 
 ---
 
+<a id="integración-con-nmap"></a>
 ## 🔗 Integración con Nmap
 
 ### Pipes Automáticos Básicos
@@ -200,6 +204,7 @@ rustscan -a 192.168.1.1 -- -sV --version-intensity 9
 ```
 ---
 
+<a id="scripting-y-automatización"></a>
 ## 🤖 Scripting y Automatización
 
 ### RustScan Scripting Engine (RSE)
@@ -332,6 +337,7 @@ if __name__ == "__main__":
 ```
 ---
 
+<a id="configuración-persistente"></a>
 ## ⚙️ Configuración Persistente
 
 ### Archivo de Configuración Global
@@ -416,6 +422,7 @@ trigger_ports = ["22"]
 
 ---
 
+<a id="combinación-con-otras-herramientas"></a>
 ## 🔗 Combinación con Otras Herramientas
 
 ### RustScan + Nuclei
@@ -481,7 +488,8 @@ echo "Análisis completado: $OUTPUT_DIR"
 
 ---
 
-## 🚨 Troubleshooting
+<a id="troubleshooting-rápido"></a>
+## 🚨 Troubleshooting Rápido
 ### Problemas Comunes y Soluciones Inmediatas
 ```
 # Error: "Too many open files"
@@ -532,52 +540,3 @@ rustscan -a 192.168.1.1 --scan-order Random --timeout 2000 -b 1000
 # Para máxima velocidad (riesgo de pérdida de paquetes)
 rustscan -a 192.168.1.1 --timeout 200 -b 25000
 ```
-
----
-
-## 💡 Tips Profesionales
-
-### Para Pentesting
-
-```
-# Escaneo inicial rápido de red completa
-rustscan -a 192.168.1.0/24 --timeout 1500 -b 10000 > initial_scan.txt
-
-# Identificación rápida de servicios web
-rustscan -a 192.168.1.0/24 -p 80,443,8080,8443 --scripts http
-
-# Escaneo sigiloso para evasión
-rustscan -a 192.168.1.1 --scan-order Random --timeout 3000 -b 500 -- -T2
-```
-
-### Para Administradores de Sistemas
-```
-# Inventario de servicios en red
-rustscan -a 192.168.1.0/24 --greppable | awk -F'/' '/open/ {print $3 ":" $1}' | sort
-
-# Monitoreo de cambios en servicios
-rustscan -a 192.168.1.0/24 --greppable > scan_$(date +%Y%m%d).txt
-
-# Verificación de compliance de puertos
-rustscan -a 192.168.1.1 -p 1-1000 -- --script "safe" -oA compliance_scan
-```
-
-### Para Desarrolladores
-```
-# Test de servicios en desarrollo
-rustscan -a localhost -p 3000,4200,5000,5432,6379,9200
-
-# Integración en CI/CD
-rustscan -a $STAGING_SERVER --scripts security-scan
-
-# Health check de microservicios
-rustscan -a 10.0.0.0/24 -p 8080-8090 --greppable | grep open
-
-```
----
-## 🎯 Referencia Rápida
-
-**Comando Básico:** `rustscan -a <TARGET> -- <NMAP_ARGS>`  
-**Máxima Velocidad:** `-b 15000 --timeout 200`  
-**Máximo Sigilo:** `--scan-order Random --timeout 3000 -b 500`  
-**Automación:** `--greppable` + `--scripts custom`
