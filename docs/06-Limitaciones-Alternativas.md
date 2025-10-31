@@ -11,7 +11,7 @@
     
 ---
 
-<a id="⚠️-limitaciones-técnicas-de-rustscan"></a>
+<a id="-limitaciones-técnicas-de-rustscan"></a>
 ## ⚠️ Limitaciones Técnicas de RustScan
 
 ### Limitaciones Actuales (v2.1.1)
