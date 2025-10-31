@@ -136,7 +136,6 @@ RustScan-Arsenal-Analista/
 - Limitaciones técnicas actuales
 - Comparativa detallada con Nmap, Masscan, Zmap
 - Estrategias de combinación de herramientas
-- Roadmap y futuro del desarrollo
     
 
 ### 🔗 07 - Integración con Herramientas
