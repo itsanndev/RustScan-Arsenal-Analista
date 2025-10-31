@@ -1,18 +1,18 @@
 ## 🎯 Índice
-1. Filosofía de Integración
-2. Integración con Nmap
-3. Pipelines de Seguridad Automatizados
-4. Integración con Herramientas Web
-5. Integración con Escáneres de Vulnerabilidades
-6. Integración con Frameworks de Pentesting
-7. Integración con SIEM y Monitoring
-8. Integración en CI/CD
-9. Scripts de Integración Avanzados
+1. [Filosofía de Integración](#filosofía-de-integración)
+2. [Integración con Nmap](#integración-con-nmap)
+3. [Pipelines de Seguridad Automatizados](#pipelines-de-seguridad-automatizados)
+4. [Integración con Herramientas Web](#integración-con-herramientas-web)
+5. [Integración con Escáneres de Vulnerabilidades](#integración-con-escáneres-de-vulnerabilidades)
+6. [Integración con Frameworks de Pentesting](#integración-con-frameworks-de-pentesting)
+7. [Integración con SIEM y Monitoring](#integración-con-siem-y-monitoring)
+8. [Integración en CI/CD](#integración-en-cicd)
+9. [Scripts de Integración Avanzados](#scripts-de-integración-avanzados)
 
 
 ---
 
-## 🔗 Filosofía de Integración
+## <a id="filosofía-de-integración"></a>🔗 Filosofía de Integración
 
 ### El Ecosistema RustScan
 RustScan está diseñado para ser el **acelerador** en pipelines de seguridad, no para reemplazar herramientas existentes. Su integración nativa con otras herramientas lo convierte en el componente perfecto para workflows automatizados.
@@ -35,7 +35,7 @@ rustscan -> procesamiento -> análisis -> reporting
 
 ---
 
-## 🔄 Integración con Nmap
+## <a id="integración-con-nmap"></a>🔄 Integración con Nmap
 
 ### Integración Nativa vs Manual
 
@@ -45,25 +45,25 @@ rustscan -> procesamiento -> análisis -> reporting
 
 TARGET="192.168.1.1"
 
-echo "🔗 COMPARATIVA: INTEGRACIÓN NMAP"
+echo "COMPARATIVA: INTEGRACIÓN NMAP"
 
 # 1. INTEGRACIÓN NATIVA (Recomendada)
 echo ""
-echo "1. 🎯 Integración nativa de RustScan:"
+echo "Integración nativa de RustScan:"
 echo "   rustscan -a $TARGET -- -sC -sV -A"
 echo "   • Ventaja: Automática, optimizada"
 echo "   • Uso: Pentesting diario, auditorías rápidas"
 
 # 2. PIPELINE MANUAL (Para control granular)
 echo ""
-echo "2. 🔧 Pipeline manual:"
+echo "Pipeline manual:"
 echo "   rustscan -a $TARGET --greppable | grep open | cut -d'/' -f1 | tr '\\n' ',' | xargs -I{} nmap -p{} -sC -sV $TARGET"
 echo "   • Ventaja: Control total sobre parámetros Nmap"
 echo "   • Uso: Escaneos especializados, entornos complejos"
 
 # 3. INTEGRACIÓN AVANZADA CON FILTRADO
 echo ""
-echo "3. 🚀 Integración avanzada con filtrado:"
+echo "Integración avanzada con filtrado:"
 cat << 'EOF'
 rustscan -a $TARGET --greppable | \
 awk -F'/' '/open/ {print $1}' | \
@@ -254,7 +254,7 @@ if __name__ == "__main__":
 ```
 ---
 
-## 🤖 Pipelines de Seguridad Automatizados
+## <a id="pipelines-de-seguridad-automatizados"></a>🤖 Pipelines de Seguridad Automatizados
 
 ### Pipeline Completo de Pentesting
 ```
@@ -371,7 +371,7 @@ echo "REPORTE EJECUTIVO: $OUTPUT_DIR/7_executive_report.txt"
 
 ---
 
-## 🌐 Integración con Herramientas Web
+## <a id="integración-con-herramientas-web"></a>🌐 Integración con Herramientas Web
 ### Pipeline Automatizado de Análisis Web
 ```
 #!/usr/bin/env python3
@@ -549,7 +549,7 @@ if __name__ == "__main__":
 ```
 ---
 
-## 🛡️ Integración con Escáneres de Vulnerabilidades
+## <a id="integración-con-escáneres-de-vulnerabilidades"></a>🛡️ Integración con Escáneres de Vulnerabilidades
 
 ### Pipeline Integrado de Vulnerabilidades
 ```
@@ -678,7 +678,7 @@ echo "RESULTADOS EN: $OUTPUT_DIR"
 ```
 ---
 
-## ⚔️ Integración con Frameworks de Pentesting
+## <a id="integración-con-frameworks-de-pentesting"></a>⚔️ Integración con Frameworks de Pentesting
 
 ### Integración con Metasploit
 ```
@@ -846,7 +846,7 @@ echo "   - empire_listener.txt"
 ```
 ---
 
-## 📊 Integración con SIEM y Monitoring
+## <a id="integración-con-siem-y-monitoring"></a>📊 Integración con SIEM y Monitoring
 
 ### Script de Exportación a ELK Stack
 ```
