@@ -1,16 +1,17 @@
 
 ## 🎯 Índice
-1. Pentesting Interno
-2. Auditorías de Compliance
-3. Respuesta a Incidentes
-4. Monitoreo Continuo
-5. CTFs y Entornos Educativos
-6. Red Teams
-7. DevSecOps
-8. Scripts de Producción
+1. [Pentesting Interno](#pentesting-interno)
+2. [Auditorías de Compliance](#auditorías-de-compliance)
+3. [Respuesta a Incidentes](#respuesta-a-incidentes)
+4. [Monitoreo Continuo](#monitoreo-continuo)
+5. [CTFs y Entornos Educativos](#ctfs-y-entornos-educativos)
+6. [Red Teams](#red-teams)
+7. [DevSecOps](#devsecops)
+8. [Scripts de Producción](#scripts-de-producción)
 
 ---
 
+<a id="pentesting-interno"></a>
 ## 🏢 Pentesting Interno
 
 ### Escenario 1: Evaluación de Red Corporativa
@@ -90,6 +91,7 @@ echo "ESCANEO DE SERVIDORES CRITICOS COMPLETADO"
 
 ---
 
+<a id="auditorías-de-compliance"></a>
 ## 📋 Auditorías de Compliance
 
 ### Escenario 3: Cumplimiento de Estándares CIS
@@ -222,6 +224,7 @@ if __name__ == "__main__":
 ```
 ---
 
+<a id="respuesta-a-incidentes"></a>
 ## 🚨 Respuesta a Incidentes
 
 ### Escenario 5: Investigación de Compromiso
@@ -296,7 +299,7 @@ class LateralMovementDetector:
     
     def establish_baseline(self):
         """Establecer línea base de servicios normales"""
-        print("📊 Estableciendo línea base de red...")
+        print("Estableciendo línea base de red...")
         
         for segment in self.segments:
             cmd = f"rustscan -a {segment} --timeout 2000 -b 5000 --greppable"
@@ -314,7 +317,7 @@ class LateralMovementDetector:
                     services[ip].append(port)
             
             self.baseline[segment] = services
-            print(f"✅ Línea base establecida para {segment}: {sum(len(v) for v in services.values())} servicios")
+            print(f"Línea base establecida para {segment}: {sum(len(v) for v in services.values())} servicios")
         
         # Guardar línea base
         with open('network_baseline.json', 'w') as f:
@@ -325,7 +328,7 @@ class LateralMovementDetector:
     
     def detect_changes(self):
         """Detectar cambios desde la línea base"""
-        print("🔍 Detectando cambios en la red...")
+        print("Detectando cambios en la red...")
         
         for segment in self.segments:
             cmd = f"rustscan -a {segment} --timeout 2000 -b 5000 --greppable"
@@ -360,13 +363,13 @@ class LateralMovementDetector:
                         'timestamp': datetime.now().isoformat()
                     }
                     self.alerts.append(alert)
-                    print(f"🚨 ALERTA: Nuevos servicios en {ip}: {new_ports}")
+                    print(f"ALERTA: Nuevos servicios en {ip}: {new_ports}")
     
     def continuous_monitoring(self, interval_minutes=5):
         """Monitoreo continuo"""
         self.establish_baseline()
         
-        print(f"🔄 Iniciando monitoreo continuo (intervalo: {interval_minutes} minutos)")
+        print(f"Iniciando monitoreo continuo (intervalo: {interval_minutes} minutos)")
         
         try:
             while True:
@@ -380,7 +383,7 @@ class LateralMovementDetector:
                 time.sleep(interval_minutes * 60)
                 
         except KeyboardInterrupt:
-            print("\n⏹️ Monitoreo detenido")
+            print("\nMonitoreo detenido")
 
 if __name__ == "__main__":
     # Segmentos de red a monitorear
@@ -392,6 +395,7 @@ if __name__ == "__main__":
 
 ---
 
+<a id="monitoreo-continuo"></a>
 ## 📊 Monitoreo Continuo
 
 ### Escenario 7: Dashboard de Servicios
@@ -454,6 +458,7 @@ done
 ```
 ---
 
+<a id="ctfs-y-entornos-educativos"></a>
 ## 🎯 CTFs y Entornos Educativos
 
 ### Escenario 8: Automatización para CTFs
@@ -581,6 +586,7 @@ if __name__ == "__main__":
 
 ---
 
+<a id="red-teams"></a>
 ## 🔴 Red Teams
 
 ### Escenario 9: Operaciones de Red Team
@@ -639,6 +645,7 @@ echo "OPERACION RED TEAMERS COMPLETADA: $LOG_DIR"
 ```
 ---
 
+<a id="devsecops"></a>
 ## 🔧 DevSecOps
 
 ### Escenario 10: Pipeline de Seguridad CI/CD
@@ -658,9 +665,9 @@ rustscan_security_scan:
     # Análisis de puertos expuestos
     - |
       if grep -q "80/open\|443/open\|22/open" scan_results.txt; then
-        echo "✅ Servicios esenciales detectados"
+        echo "SERVICIOS ESENCIALES DETECTADOS"
       else
-        echo "❌ Servicios esenciales no disponibles"
+        echo "SERVICIOS ESENCIALES NO DETECTADOS"
         exit 1
       fi
     
@@ -674,7 +681,7 @@ rustscan_security_scan:
       fi
     
     # Reporte de seguridad
-    - echo "📊 Resumen de seguridad:" && cat scan_results.txt
+    - echo "REPORTE DE SEGURIDAD:" && cat scan_results.txt
   artifacts:
     paths:
       - scan_results.txt
@@ -704,7 +711,7 @@ class DevSecOpsScanner:
     
     def run_security_scan(self, target):
         """Ejecutar escaneo de seguridad"""
-        print(f"🔍 Ejecutando escaneo de seguridad en {target}")
+        print(f"EJECUTANDO ESCANEO DE SEGURIDAD {target}")
         
         # Escaneo completo
         cmd = f"rustscan -a {target} --timeout 1500 -b 8000 --greppable"
@@ -768,7 +775,7 @@ class DevSecOpsScanner:
         with open('security_scan_report.json', 'w') as f:
             json.dump(report, f, indent=2)
         
-        print(f"📋 Reporte de seguridad generado: security_scan_report.json")
+        print(f"REPORTE DE SEGURIDAD GENERADO: security_scan_report.json")
         
         # Salir con código apropiado para CI/CD
         sys.exit(0 if not all_violations else 1)
